@@ -1,17 +1,3 @@
-import { useState, useEffect } from "react";
-
-// ── CONSTANTS ────────────────────────────────────────────────────────────────
-const BANK = { bank: "SeaBank", no: "901195135280", name: "An Wahyu Ady Putra" };
-const PLANS = [
-  { id: "free",     label: "FREE",     price: 0,      desc: "Gratis selamanya",       color: "gray",   features: ["1x download PDF","1 template dasar","Form builder lengkap"], locked: ["ATS Score","Cover Letter AI","Career Guidance AI","Unlimited download"] },
-  { id: "pro",      label: "PRO",      price: 49000,  desc: "Rp49.000 / bulan",       color: "blue",   popular: true, features: ["Unlimited edit & download","ATS Score (AI Semantik)","Cover Letter Generator","Career Guidance AI","Semua template"], locked: [] },
-  { id: "lifetime", label: "LIFETIME", price: 149000, desc: "Rp149.000 sekali bayar",  color: "purple", features: ["Semua fitur PRO","Akses selamanya","Update gratis","Prioritas support"], locked: [] },
-];
-const PRO_PAGES = ["ats","coverletter","career"];
-const fmt = n => "Rp" + new Intl.NumberFormat("id-ID").format(n);
-const cls = (...a) => a.filter(Boolean).join(" ");
-const EMPTY_RESUME = { name:"",email:"",phone:"",location:"",linkedin:"",portfolio:"", summary:"", experience:[{company:"",role:"",period:"",desc:""}], education:[{school:"",degree:"",year:"",gpa:""}], skills:"",certifications:"",languages:"", format:"indonesia" };
-
 // ── UI ATOMS ─────────────────────────────────────────────────────────────────
 const Badge = ({ c="blue", children }) => {
   const map = { blue:"bg-blue-100 text-blue-700", green:"bg-green-100 text-green-700", gray:"bg-gray-100 text-gray-500", purple:"bg-purple-100 text-purple-700", red:"bg-red-100 text-red-600", yellow:"bg-yellow-100 text-yellow-700" };
